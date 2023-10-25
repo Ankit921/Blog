@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://mern-blog-app-yfsk.onrender.com";
 
 export const request = async (
   url,

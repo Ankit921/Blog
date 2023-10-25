@@ -7,22 +7,20 @@ const Footer = () => {
         <div className={classes.col}>
           <h2>About</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa harum
-            ex consectetur magnam et sed natus, tenetur soluta vel nihil dolore
-            aperiam impedit accusantium itaque, earum iusto a cum nulla?
+         A Blog Application to view and edit blogs from various walks of life
           </p>
         </div>
         <div className={classes.col}>
           <h2>Contacts</h2>
-          <span>Phone: +123 456 789</span>
-          <span>YouTube: WebDevMania</span>
-          <span>GitHub: WebDevMania</span>
+          <span>Phone: +91 7007650021</span>
+          <span>Email: ankits.dev1@gmail.com</span>
+          <span>GitHub: Ankit921</span>
         </div>
         <div className={classes.col}>
           <h2>Location</h2>
-          <span>Continent: Europe</span>
-          <span>Country: Bulgaria</span>
-          <span>Current Location: Bulgaria</span>
+          <span>Continent: Asia</span>
+          <span>Country: India</span>
+          <span>Current Location: Lucknow</span>
         </div>
       </div>
     </footer>

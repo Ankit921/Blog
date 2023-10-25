@@ -29,7 +29,7 @@ const Register = () => {
       });
       console.log(data)
     dispatch(register(data))
-    navigate("/")
+    navigate("/login")
 
     
     } catch (error) {
