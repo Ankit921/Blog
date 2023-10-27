@@ -31,7 +31,7 @@ const Create = () => {
   };
 
   const handleCloseImg = () => {
-    setImg(null);
+    setImg(null)
   };
 
   const handleCreateBlog = async (e) => {

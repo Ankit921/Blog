@@ -6,6 +6,7 @@ const authController = require("./controller/authController");
 const blogController = require("./controller/blogController");
 const app = express();
 const multer = require("multer");
+const cookieParser = require("cookie-parser");
 
 
 //connecting to db
@@ -20,8 +21,13 @@ const connect = async () => {
 
 //routes
 app.use("/images", express.static("public/images"));
-app.use(cors());
+app.use(cors({
+    origin: "http://http://localhost:3000",
+    methods:["POST","GET"],
+    credentials:true
+  }));
 app.use(express.json());
+app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }));
 app.use("/auth", authController);
 app.use("/blog", blogController);

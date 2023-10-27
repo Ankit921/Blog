@@ -1,6 +1,7 @@
 const authController=require('express').Router();
 const User=require("../model/User")
 const bcrypt=require("bcrypt")
+const verifyToken = require("../middleware/verifyToken");
 const jwt=require('jsonwebtoken')
 
 authController.post('/register',async (req,res)=>{
@@ -36,11 +37,20 @@ authController.post('/login',async (req,res)=>{
 
         const {password,...others}=user._doc
         const token=jwt.sign({id:user.id},process.env.JWT_SECRET,{expiresIn:'5h'})
-
-        return res.status(200).json({user:others,token})
+        
+        return res.cookie("access-token",token,{
+            httpOnly:true,
+        }).status(200).json({user:others,token})
     } catch (error) {
         return res.status(500).json(error)
     }
 })
 
+authController.get('/logout',verifyToken,async (req,res)=>{
+try {
+     console.log("logout successful");
+} catch (error) {
+   res.status(500).end(error)
+}
+})
 module.exports=authController

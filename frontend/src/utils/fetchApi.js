@@ -5,10 +5,16 @@ export const request = async (
   method,
   headers = {},
   body = {},
-  isNotStringified = false
+  isNotStringified = false,
+  includeCredentials = true
 ) => {
   let res;
   let data;
+
+if (includeCredentials) {
+  headers = { ...headers, credentials: 'include' };
+}
+
   switch (method) {
     case "GET":
       res = await fetch(BASE_URL + url, { headers });
@@ -25,6 +31,7 @@ export const request = async (
           headers,
           method,
           body: JSON.stringify({ ...body }),
+        
         });
         data = await res.json();
       }
