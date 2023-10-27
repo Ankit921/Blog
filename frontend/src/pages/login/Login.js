@@ -21,7 +21,7 @@ e.preventDefault()
   try {
     const options={'Content-Type':'application/json'}
 
-    const data=await request("/auth/login",'POST',options,{email,password},false,true)
+    const data=await request("/auth/login",'POST',options,{email,password})
     console.log(data)
     dispatch(login(data))
     navigate("/")

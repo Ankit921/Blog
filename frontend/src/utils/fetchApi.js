@@ -1,19 +1,14 @@
-const BASE_URL = "https://mern-blog-app-yfsk.onrender.com";
+const BASE_URL = "http://localhost:5000";
 
 export const request = async (
   url,
   method,
   headers = {},
   body = {},
-  isNotStringified = false,
-  includeCredentials = true
+  isNotStringified = false
 ) => {
   let res;
   let data;
-
-if (includeCredentials) {
-  headers = { ...headers, credentials: 'include' };
-}
 
   switch (method) {
     case "GET":
@@ -22,7 +17,6 @@ if (includeCredentials) {
       return data;
 
     case "POST":
-      
       if (isNotStringified) {
         res = await fetch(BASE_URL + url, { headers, method, body });
         data = await res.json();
@@ -31,7 +25,6 @@ if (includeCredentials) {
           headers,
           method,
           body: JSON.stringify({ ...body }),
-        
         });
         data = await res.json();
       }

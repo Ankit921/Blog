@@ -21,11 +21,7 @@ const connect = async () => {
 
 //routes
 app.use("/images", express.static("public/images"));
-app.use(cors({
-    origin: "http://http://localhost:3000",
-    methods:["POST","GET"],
-    credentials:true
-  }));
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }));
