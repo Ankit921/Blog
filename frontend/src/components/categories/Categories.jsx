@@ -71,7 +71,7 @@ const Categories = () => {
               {filteredBlogs?.map((blog) => (
                 <div key={blog._id} className={classes.blog}>
                   <Link to={`/blogDetails/${blog?._id}`}>
-                    <img src={`https://localhost:5000/images/${blog?.photo}`}  alt=''/>
+                    <img src={`http://localhost:5000/images/${blog?.photo}`}  alt=''/>
                   </Link>
                   <div className={classes.blogData}>
                     <div className={classes.categoryAndMetadata}>
